@@ -37,13 +37,8 @@ Download the zip file for windows and extract it.
 Warnings and notes
 
 - This installer will not work if you've previously tried installing Native Access V2. If that's the case, completely remove any existing "Native Access V2.exe" file or folders and start again.
-- yabridge works best with Wine Staging 9.21. If you need to downgrade Wine you can set:
 
-version=9.21
-variant=staging
 
-- Always back up your Wine prefix before running installers.
-- Run the GUI script as your regular user (not root). Use sudo only when requested by the script.
 
 How to run
 

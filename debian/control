@@ -1,0 +1,15 @@
+Source: vst-installer
+Section: utils
+Priority: optional
+Maintainer: Your Name <you@example.com>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.5.0
+Homepage: https://github.com/your-username/vst_installer
+
+Package: vst-installer
+Version: 0.0.1
+Architecture: amd64
+Depends: zenity, wine
+Description: GUI wrapper to install Native Instruments VSTs using Wine and yabridge.
+ A small utility that mounts plugin ISOs, runs the Windows installer under Wine,
+ and triggers a yabridge sync where available.

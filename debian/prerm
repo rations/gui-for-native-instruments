@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+# prerm: run before package removal
+# Currently a no-op but kept for future cleanup hooks.
+# If removing the package, we can do pre-removal tasks here.
+
+exit 0

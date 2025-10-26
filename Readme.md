@@ -43,30 +43,51 @@ This installer will not work if you've previously tried installing Native Access
 
 How to run
 
-Clone the repository
-git clone https://github.com/rations/gui-for-native-instruments.git
-cd vst_installer
-
-Run the GUI installer
-
 Make sure prerequisites are installed and Native Access 1.14.1 is installed and activated using Wine, click install all once logged in wait for downloads to finsih then close Native Access
 
-Run the GUI from the cloned repository: 
+Clone the repository
+
+git clone https://github.com/rations/gui-for-native-instruments.git
+
+cd vst_installer
+
+chmod +x vst_installer.sh 
+
+Run the GUI from the cloned repository:
+
 ./vst_installer.sh
+
 When prompted, select the plugin ISO file. The script will mount it at /mnt/cdrom0, search for a Windows installer (.exe), run it with Wine, unmount the ISO, and attempt to sync yabridge.
 
 Example full workflow
-1. git clone https://github.com/your-username/vst_installer.git
-2. cd vst_installer
-3. sudo apt update && sudo apt install -y zenity winetricks
-4. Install Wine Staging 9.21 (see instructions above)
-5. Install and configure yabridge
-6. ./vst_installer.sh
-7. Select the plugin ISO when prompted and follow the installer prompts shown by Wine.
+
+git clone https://github.com/rations/vst_installer.git
+
+cd vst_installer
+
+Make the installer executable and run it:
+
+chmod +x vst_installer.sh && ./vst_installer.sh
+
+Select the plugin ISO when prompted and follow the installer prompts shown by Wine.
 
 You need to run vst_installer.sh for each individual native instruments you own
 
-- Native Access V2 conflicts:
-  This installer will not work if Native Access V2 remnants exist. Remove any Native Access V2 files/folders before attempting installs with Native Access 1.x.
+Native Access V2 conflicts:
+This installer will not work if Native Access V2 remnants exist. Remove any Native Access V2 files/folders before attempting installs with Native Access 1
 
+GUI-only install instructions (no terminal required)
+
+If you prefer to avoid the terminal entirely, download the prebuilt .deb from the project's GitHub Release and install it using a GUI package installer (gdebi, GNOME Software, or your distro's file manager). The workflow publishes an amd64 .deb on each Release so end users never need to build anything locally.
+
+Step-by-step (end-user, GUI-only)
+1. Open the repository Releases page in your browser and download the file named like:
+   - vst-installer_0.1.0_amd64.deb
+2. Open your file manager and double-click the downloaded .deb file.
+   - On many systems this will open GNOME Software or a similar Software Installer.
+   - If your system uses gdebi and it is installed, you can right-click and "Open With" → GDebi Package Installer.
+3. Click the "Install" button in the GUI installer and authenticate when prompted.
+4. After installation completes:
+   - Launch the app from your application menu as "VST Installer" 
+   - Follow the wizard to select your plugin ISO and proceed. The GUI will mount the ISO, run the Windows installer under Wine, unmount the ISO, and attempt a yabridge sync.
 

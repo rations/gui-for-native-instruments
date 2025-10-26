@@ -1,0 +1,7 @@
+vst-installer (0.1.0) unstable; urgency=low
+
+  * Initial packaged release: add .deb packaging, desktop entry, and basic maintainer scripts.
+  * Packaging helper script (pack-deb.sh) added to produce amd64 .deb.
+  * GitHub Actions workflow to build and attach .deb on release.
+
+ -- Your Name <you@example.com>  Sun, 26 Oct 2025 00:57:00 +1000

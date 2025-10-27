@@ -45,33 +45,23 @@ How to run
 
 Make sure prerequisites are installed and Native Access 1.14.1 is installed and activated using Wine, click install all once logged in wait for downloads to finsih then close Native Access
 
-Clone the repository
+Clone the repository in the terminal
 
-git clone https://github.com/rations/gui-for-native-instruments.git
+sudo git clone https://github.com/rations/gui-for-native-instruments.git
 
-cd vst_installer
+cd gui-for-native-instruments  (this changes you into the folder gui-for-native-instruments)
 
-chmod +x vst_installer.sh 
+sudo chmod +x vst_installer.sh   (this makes the file executable)   
 
-Run the GUI from the cloned repository:
-
-./vst_installer.sh
+./vst_installer.sh  (this runs the GUI)
 
 When prompted, select the plugin ISO file. The script will mount it at /mnt/cdrom0, search for a Windows installer (.exe), run it with Wine, unmount the ISO, and attempt to sync yabridge.
 
-Example full workflow
+You need to run ./vst_installer.sh for each individual native instruments you own one at a time.
 
-git clone https://github.com/rations/vst_installer.git
-
-cd vst_installer
-
-Make the installer executable and run it:
-
-chmod +x vst_installer.sh && ./vst_installer.sh
-
-Select the plugin ISO when prompted and follow the installer prompts shown by Wine.
-
-You need to run vst_installer.sh for each individual native instruments you own
+So you don't have to do use the terminal every time, open your file manager (Thunar on xfce, Dolphin on KDE plasma) Click edit, preferences, advanced and look for execute shell scripts. Now you can just double click the vst_installer.sh in the gui-for-native-instruments folder and it will run the gui.
 
 Native Access V2 conflicts:
 This installer will not work if Native Access V2 remnants exist. Remove any Native Access V2 files/folders before attempting installs with Native Access 1.14.1
+
+TO UNINSTALL In the terminal sudo remove gui-for-native-instruments or sudo purge gui-for-native-instruments
